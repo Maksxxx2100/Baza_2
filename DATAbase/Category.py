@@ -8,6 +8,8 @@ class Category(Base):
 
     category_id = Column(Integer, primary_key=True, autoincrement=True)
     category_title = Column(String(50), nullable=False)
-
+    film = relationship("Film", back_populates="category_id")
+    serial = relationship("Serial", back_population="category_id")
+    
     def __repr__(self):
         return f"Category(id={self.id!r}, title={self.category_title!r})"

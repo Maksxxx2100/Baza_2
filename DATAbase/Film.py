@@ -10,6 +10,7 @@ class Film(Base):
     film_title = Column(String(50), nullable=False)
     film_duration = Column(Integer)
     film_release_date = Column(Date)
+    category_id = relationship("Category", back_population= "film")
 
     def __repr__(self):
         return f"Film(id={self.id!r}, title={self.film_title!r}, duration = {self.film_duration!r},date={self.film_release_date})"

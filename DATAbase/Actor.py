@@ -11,4 +11,4 @@ class Actor(Base):
     actors_birth = Column(Date)
 
     def __repr__(self):
-        return f"Film(id={self.id!r}, name={self.actors_name!r}, birth = {self.actors_birth!r})"
+        return f"Actor(id={self.id!r}, name={self.actors_name!r}, birth = {self.actors_birth!r})"
