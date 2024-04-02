@@ -11,6 +11,10 @@ class Film(Base):
     film_duration = Column(Integer)
     film_release_date = Column(Date)
     category_id = relationship("Category", back_population= "film")
+    film_actor = relationship("Film_Actor", back_populates="film")
+    film_fmaker = relationship("Film_Filmmaker", back_populates="film")
+    film_review = relationship("Film_Review", back_populates="film")
+    film_user = relationship("User_Film", back_populates="film")
 
     def __repr__(self):
-        return f"Film(id={self.id!r}, title={self.film_title!r}, duration = {self.film_duration!r},date={self.film_release_date})"
+        return f"Film(id={self.film_id!r}, title={self.film_title!r}, duration = {self.film_duration!r},date={self.film_release_date!r})"

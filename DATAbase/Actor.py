@@ -9,6 +9,8 @@ class Actor(Base):
     actor_id = Column(Integer, primary_key=True, autoincrement=True)
     actors_name = Column(String(50), nullable=False)
     actors_birth = Column(Date)
+    actor_film = relationship("Film_Actor", back_populates="actor")
+    actor_serial = relationship("Serial_Actor", back_populates="actor")
 
     def __repr__(self):
-        return f"Actor(id={self.id!r}, name={self.actors_name!r}, birth = {self.actors_birth!r})"
+        return f"Actor(id={self.actor_id!r}, name={self.actors_name!r}, birth = {self.actors_birth!r})"

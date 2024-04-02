@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, ForeignKey
+from sqlalchemy import Column, ForeignKey
 from sqlalchemy.orm import relationship
 
 from base_meta import Base
@@ -11,4 +11,7 @@ class Film_Actor(Base):
 
     actor = relationship("Actor", back_populates="actor_film")
     film = relationship("Film", back_populates="film_actor")
+
+    def __repr__(self):
+        return f"FilmActor(Film_id={self.film_id!r}, Actor_id = {self.actor_id!r})"
 

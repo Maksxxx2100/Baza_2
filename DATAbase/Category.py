@@ -12,4 +12,4 @@ class Category(Base):
     serial = relationship("Serial", back_population="category_id")
     
     def __repr__(self):
-        return f"Category(id={self.id!r}, title={self.category_title!r})"
+        return f"Category(id={self.category_id!r}, title={self.category_title!r})"
