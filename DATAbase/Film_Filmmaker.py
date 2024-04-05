@@ -1,7 +1,7 @@
 from sqlalchemy import Column, ForeignKey
 from sqlalchemy.orm import relationship
 
-from base_meta import Base
+from .base_meta import Base
 
 class Film_Filmmaker(Base):
     __tablename__ = "Film_Filmmaker"

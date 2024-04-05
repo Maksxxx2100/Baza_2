@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String,Date
 from sqlalchemy.orm import relationship
 
-from base_meta import Base
+from .base_meta import Base
 
 class Actor(Base):
     __tablename__ = "Actor"
