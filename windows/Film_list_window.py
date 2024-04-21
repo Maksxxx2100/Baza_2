@@ -7,8 +7,10 @@ from DATAbase import get_session, Film, Category
 from ui import UiFilmListForm
 from sqlalchemy.sql import text
 
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 class FilmList(QWidget, UiFilmListForm):
+
     def __init__(self):
         super().__init__()
         #self.callbacks = callbacks

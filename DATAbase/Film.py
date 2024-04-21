@@ -9,7 +9,7 @@ class Film(Base):
     film_id = Column(Integer, primary_key=True, autoincrement=True)
     film_title = Column(String(50), nullable=False)
     film_duration = Column(Integer)
-    film_release_date = Column(Date)
+    film_release_date = Column(String(10))
     category = relationship("Category", back_populates="film")
     category_id = Column(ForeignKey("Category.category_id"), primary_key=True)
     film_actor = relationship("Film_Actor", back_populates="film")

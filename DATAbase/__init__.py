@@ -15,3 +15,4 @@ from .User_Film import User_Film
 from .Serial_Filmmaker import Serial_Filmmaker
 from .User_Review import User_Review
 from .User_Serial import User_Serial
+from .Admin import Admin
