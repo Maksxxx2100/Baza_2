@@ -8,7 +8,7 @@ class Actor(Base):
 
     actor_id = Column(Integer, primary_key=True, autoincrement=True)
     actors_name = Column(String(50), nullable=False)
-    actors_birth = Column(Date)
+    actors_birth = Column(String(10))
     actor_film = relationship("Film_Actor", back_populates="actor")
     actor_serial = relationship("Serial_Actor", back_populates="actor")
 

@@ -1,1 +1,7 @@
 from .UI_Film_list import Ui_Film_list as UiFilmListForm
+from .UI_Film_info import Ui_Film_info_window as UiFilmInfoForm
+from .UI_Actors_list import Ui_Actors_list as UiActorsListForm
+from .UI_Admin_Actors_list import Ui_Admin_Actors_list as UiAdminActorslistForm
+from .UI_Admin_Film_list import Ui_Admin_Film_list as UiAdminFilmListForm
+from .UI_Admin_Film_info import Ui_Admin_Film_Info_Form as UiAdminFilmInfoForm
+from .UI_Admin_Actor_info import Ui_Admin_Actor_Info as UiAdminActorInfoForm

@@ -12,7 +12,7 @@ class Review(Base):
 
     review_user = relationship("User_Review", back_populates="review")
     review_film = relationship("Film_Review", back_populates="review")
-    review_serial = review_serial = relationship("Serial_Review", back_populates="review")
+    review_serial = relationship("Serial_Review", back_populates="review")
 
     def __repr__(self):
         return f"Review(id={self.review_id!r}, text={self.review_text!r}, grade = {self.review_grade!r})"

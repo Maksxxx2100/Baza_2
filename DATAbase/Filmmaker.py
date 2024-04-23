@@ -8,7 +8,7 @@ class Filmmaker(Base):
 
     fmaker_id = Column(Integer, primary_key=True, autoincrement=True)
     fmakers_name = Column(String(50), nullable=False)
-    fmakers_birth = Column(Date)
+    fmakers_birth = Column(String(10))
     fmaker_film = relationship("Film_Filmmaker", back_populates="fmaker")
     fmaker_serial = relationship("Serial_Filmmaker", back_populates="fmaker")
 

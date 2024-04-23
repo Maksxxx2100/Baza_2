@@ -1,6 +1,5 @@
-from sqlalchemy import Column, Integer, String,Date, ForeignKey
+from sqlalchemy import Column, Integer, String,Date,ForeignKey
 from sqlalchemy.orm import relationship
-
 
 from .base_meta import Base
 
@@ -10,9 +9,10 @@ class Serial(Base):
     serial_id = Column(Integer, primary_key=True, autoincrement=True)
     serial_title = Column(String(50), nullable=False)
     serial_ep = Column(Integer)
-    serial_release_date = Column(Date)
+    serial_release_date = Column(String(10))
+    category_id = Column(Integer, ForeignKey("Category.category_id"))
+
     category = relationship("Category", back_populates="serial")
-    category_id = Column(ForeignKey("Category.category_id"),primary_key=True)
     serial_actor = relationship("Serial_Actor", back_populates="serial")
     serial_fmaker = relationship("Serial_Filmmaker", back_populates="serial")
     serial_review = relationship("Serial_Review", back_populates="serial")

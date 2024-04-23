@@ -10,8 +10,9 @@ class Film(Base):
     film_title = Column(String(50), nullable=False)
     film_duration = Column(Integer)
     film_release_date = Column(String(10))
+    category_id = Column(Integer, ForeignKey("Category.category_id"))
+
     category = relationship("Category", back_populates="film")
-    category_id = Column(ForeignKey("Category.category_id"), primary_key=True)
     film_actor = relationship("Film_Actor", back_populates="film")
     film_fmaker = relationship("Film_Filmmaker", back_populates="film")
     film_review = relationship("Film_Review", back_populates="film")

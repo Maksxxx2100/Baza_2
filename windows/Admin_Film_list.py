@@ -4,20 +4,18 @@ from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem
 
 from DATAbase import get_session, Film, Category
-from ui import UiFilmListForm
-from .Film_info import FilmInfo
+from ui import UiAdminFilmListForm
+from .Admin_Film_info import AdminFilmInfo
 from sqlalchemy.sql import text
 
-from PyQt5 import QtCore, QtGui, QtWidgets
 
-class FilmList(QWidget, UiFilmListForm):
-
+class AdminFilmList(QWidget, UiAdminFilmListForm):
     def __init__(self):
         super().__init__()
         #self.callbacks = callbacks
         self.create_window = None
         self.setupUi(self)
-        self.Film_tableWidget.cellDoubleClicked.connect(self.filmInfo)
+        self.Film_tableWidget.cellDoubleClicked.connect(self.admin_filmInfo)
         self.session = get_session()
         self.gosearch_pushButton.clicked.connect(self.updateTable)
         self.backto_choose_pushButton.clicked.connect(lambda: self.close())
@@ -76,10 +74,10 @@ class FilmList(QWidget, UiFilmListForm):
         self.updateTable(category_set)
 
 
-    def filmInfo(self, row, column):
+    def admin_filmInfo(self, row, column):
         film_id = int(self.Film_tableWidget.item(row, 0).text())
         film = self.session.query(Film).get(film_id)
-        self.create_window = FilmInfo(film)
+        self.create_window = AdminFilmInfo(film, [self.createTable])
         self.create_window.show()
 
 
